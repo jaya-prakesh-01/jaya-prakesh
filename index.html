@@ -355,8 +355,14 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <h2 class="s-title" style="color:#fff">The <em>Work</em></h2>
     </div>
     <div>
-      <p class="port-sub">Click on any video to load it. Direct Google Drive links embedded.</p>
+      <p class="port-sub">Paste a YouTube or Vimeo URL into any slot below to add your video instantly.</p>
     </div>
+  </div>
+
+  <!-- URL INPUT BAR -->
+  <div class="video-input-bar reveal" style="margin-bottom:20px;">
+    <input type="url" id="globalUrl" placeholder="Paste Google Drive share link, YouTube or Vimeo URL here…">
+    <button onclick="assignUrl()">Add to next slot →</button>
   </div>
 
   <!-- BENTO GRID — 8 real videos, 4-col layout -->
@@ -367,9 +373,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs1">
         <div class="thumb-layer">
           <div class="thumb-num">01</div>
-          <div class="thumb-play" onclick="loadVideo(1, 'https://drive.google.com/file/d/1vA5WwZ8J0Z9nS_H8uX2S9_G2zVzD5L5H/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(1)"></div>
           <div class="thumb-title">AXIS STAR ULIP</div>
-          <div class="thumb-label">Click to play · BFSI Info-Animation</div>
+          <div class="thumb-label">Click to load · BFSI Info-Animation</div>
         </div>
       </div>
       <div class="bento-info">
@@ -385,9 +391,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs2">
         <div class="thumb-layer">
           <div class="thumb-num">02</div>
-          <div class="thumb-play" onclick="loadVideo(2, 'https://drive.google.com/file/d/1_S7X4I5R7_S7X4I5R7_S7X4I5R7_S7X4I5/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(2)"></div>
           <div class="thumb-title">Biogas</div>
-          <div class="thumb-label">Click to play · Environmental Explainer</div>
+          <div class="thumb-label">Click to load · Environmental Explainer</div>
         </div>
       </div>
       <div class="bento-info">
@@ -403,9 +409,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs3">
         <div class="thumb-layer">
           <div class="thumb-num">03</div>
-          <div class="thumb-play" onclick="loadVideo(3, 'https://drive.google.com/file/d/1T4X7_S7X4I5R7_S7X4I5R7_S7X4I5R7_S7X/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(3)"></div>
           <div class="thumb-title">BPCL MN 01</div>
-          <div class="thumb-label">Click to play · Corporate Training</div>
+          <div class="thumb-label">Click to load · Corporate Training</div>
         </div>
       </div>
       <div class="bento-info">
@@ -421,9 +427,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs4">
         <div class="thumb-layer">
           <div class="thumb-num">04</div>
-          <div class="thumb-play" onclick="loadVideo(4, 'https://drive.google.com/file/d/1w7X7_S7X4I5R7_S7X4I5R7_S7X4I5R7_S7X/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(4)"></div>
           <div class="thumb-title">Earth's Whisper</div>
-          <div class="thumb-label">Click to play · Creative Storytelling</div>
+          <div class="thumb-label">Click to load · Creative Storytelling</div>
         </div>
       </div>
       <div class="bento-info">
@@ -439,9 +445,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs5">
         <div class="thumb-layer">
           <div class="thumb-num">05</div>
-          <div class="thumb-play" onclick="loadVideo(5, 'https://drive.google.com/file/d/1x7X7_S7X4I5R7_S7X4I5R7_S7X4I5R7_S7X/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(5)"></div>
           <div class="thumb-title">Sequence 01</div>
-          <div class="thumb-label">Click to play · Motion Design</div>
+          <div class="thumb-label">Click to load · Motion Design</div>
         </div>
       </div>
       <div class="bento-info">
@@ -457,9 +463,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs6">
         <div class="thumb-layer">
           <div class="thumb-num">06</div>
-          <div class="thumb-play" onclick="loadVideo(6, 'https://drive.google.com/file/d/1y7X7_S7X4I5R7_S7X4I5R7_S7X4I5R7_S7X/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(6)"></div>
           <div class="thumb-title">Splash 3</div>
-          <div class="thumb-label">Click to play · Broadcast / Intro</div>
+          <div class="thumb-label">Click to load · Broadcast / Intro</div>
         </div>
       </div>
       <div class="bento-info">
@@ -475,9 +481,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs7">
         <div class="thumb-layer">
           <div class="thumb-num">07</div>
-          <div class="thumb-play" onclick="loadVideo(7, 'https://drive.google.com/file/d/1z7X7_S7X4I5R7_S7X4I5R7_S7X4I5R7_S7X/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(7)"></div>
           <div class="thumb-title">Vertical Farming Facility</div>
-          <div class="thumb-label">Click to play · Science Explainer</div>
+          <div class="thumb-label">Click to load · Science Explainer</div>
         </div>
       </div>
       <div class="bento-info">
@@ -493,9 +499,9 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       <div class="video-shell" id="vs8">
         <div class="thumb-layer">
           <div class="thumb-num">08</div>
-          <div class="thumb-play" onclick="loadVideo(8, 'https://drive.google.com/file/d/1a7X7_S7X4I5R7_S7X4I5R7_S7X4I5R7_S7X/view')"></div>
+          <div class="thumb-play" onclick="promptSlot(8)"></div>
           <div class="thumb-title">Wetland Scenario</div>
-          <div class="thumb-label">Click to play · Environmental Scenario</div>
+          <div class="thumb-label">Click to load · Environmental Scenario</div>
         </div>
       </div>
       <div class="bento-info">
@@ -506,6 +512,17 @@ footer{background:var(--ink);padding:36px 48px;display:flex;align-items:center;j
       </div>
     </div>
 
+  </div>
+
+  <!-- GOOGLE DRIVE GUIDE -->
+  <div class="howto reveal" style="margin-top:20px;">
+    <p>
+      <strong>🎬 How to add your Google Drive videos in 3 steps:</strong><br><br>
+      <strong>Step 1 —</strong> Open your video in Google Drive → click the 3-dot menu → <strong>Share</strong> → set access to <strong>"Anyone with the link"</strong><br>
+      <strong>Step 2 —</strong> Copy the share link. It looks like: <code>https://drive.google.com/file/d/FILE_ID/view</code><br>
+      <strong>Step 3 —</strong> Paste it in the input bar above and click <strong>"Add to next slot"</strong> — the site converts it to an embed automatically.<br><br>
+      <strong>Also works with:</strong> YouTube (<code>https://youtu.be/ID</code>) and Vimeo (<code>https://vimeo.com/ID</code>)
+    </p>
   </div>
 </section>
 
@@ -736,7 +753,10 @@ window.addEventListener('scroll',()=>{
   document.querySelector('nav').style.backdropFilter = window.scrollY>60 ? 'blur(12px)' : '';
 });
 
-// VIDEO LOADING FUNCTION
+// VIDEO SLOT SYSTEM
+let nextSlot = 1;
+const slotCount = 8;
+
 function toEmbed(url){
   url = url.trim();
   // Google Drive: /file/d/FILE_ID/view → embed
@@ -748,19 +768,22 @@ function toEmbed(url){
   // YouTube short
   m = url.match(/youtu\.be\/([A-Za-z0-9_\-]{11})/);
   if(m) return 'https://www.youtube.com/embed/'+m[1]+'?autoplay=1&rel=0';
+  // YouTube embed already
+  m = url.match(/youtube\.com\/embed\/([A-Za-z0-9_\-]{11})/);
+  if(m) return url;
   // Vimeo
-  m = url.match(/vimeo\.com\/(?:video\/)?(\ d+)/);
+  m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
   if(m) return 'https://player.vimeo.com/video/'+m[1]+'?autoplay=1';
   // Already an embed
   if(url.includes('embed') || url.includes('player.vimeo') || url.includes('/preview')) return url;
   return null;
 }
 
-function loadVideo(slotNum, url){
-  const shell = document.getElementById('vs'+slotNum);
+function loadSlot(n, url){
+  const shell = document.getElementById('vs'+n);
   if(!shell) return;
   const embed = toEmbed(url);
-  if(!embed){alert('Could not load video. Please check the URL.');return;}
+  if(!embed){alert('Could not parse that URL. Try a standard YouTube or Vimeo link.');return;}
   const iframe = document.createElement('iframe');
   iframe.src = embed;
   iframe.allow = 'autoplay; fullscreen; picture-in-picture';
@@ -771,6 +794,22 @@ function loadVideo(slotNum, url){
   shell.style.position = 'relative';
   shell.appendChild(iframe);
   shell.classList.add('has-iframe');
+  // advance next slot
+  if(nextSlot === n) nextSlot = n < slotCount ? n+1 : 1;
+}
+
+function promptSlot(n){
+  const url = prompt('Paste YouTube or Vimeo URL for this slot:');
+  if(url && url.trim()) loadSlot(n, url);
+}
+
+function assignUrl(){
+  const input = document.getElementById('globalUrl');
+  const url = input.value.trim();
+  if(!url){alert('Please paste a YouTube or Vimeo URL first.');return;}
+  loadSlot(nextSlot, url);
+  input.value = '';
+  nextSlot = nextSlot < slotCount ? nextSlot+1 : 1;
 }
 
 // FORM
