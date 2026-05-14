@@ -7,7 +7,7 @@ const Portfolio = () => {
       {/* Navigation (Glassmorphic) */}
       <nav className="fixed w-full top-0 z-50 backdrop-blur-xl bg-neutral-950/50 border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-semibold tracking-tight text-white">G. Jaya Sundar Prakash</h1>
+          <h1 className="text-xl font-semibold tracking-tight text-white">G. Jaya Sundar </h1>
           <a href="#contact" className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 transition duration-300 text-sm font-medium backdrop-blur-md border border-white/5">
             Get in Touch
           </a>
