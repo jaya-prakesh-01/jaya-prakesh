@@ -794,7 +794,7 @@ function promptSlot(n){
 function assignUrl(){
   const input = document.getElementById('globalUrl');
   const url = input.value.trim();
-  if(!url){alert('Please paste a YouTube or Vimeo URL first.');return;}
+  if(!url){alert('Please paste a Google Drive, YouTube, or Vimeo URL first.');return;}
   loadSlot(nextSlot, url);
   input.value = '';
   nextSlot = nextSlot < slotCount ? nextSlot+1 : 1;
