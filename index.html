@@ -748,8 +748,12 @@ const slotCount = 8;
 function toEmbed(url){
   url = url.trim();
   // Google Drive: /file/d/FILE_ID/view → embed
-  let m = url.match(/\/file\/d\/([^\/\?]+)/);
-  if(m) return 'https://drive.google.com/file/d/'+m[1]+'/preview';
+ // Google Drive: Direct video stream alternative 
+let m = url.match(/\/file\/d\/([^\/\?]+)/);
+if(m) {
+    // If you prefer the native player look, use the raw stream link:
+    return 'https://drive.google.com/uc?export=download&id=' + m[1];
+}
   // YouTube full
   m = url.match(/[?&]v=([A-Za-z0-9_\-]{11})/);
   if(m) return 'https://www.youtube.com/embed/'+m[1]+'?autoplay=1&rel=0';
