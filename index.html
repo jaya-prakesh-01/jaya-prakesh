@@ -771,7 +771,7 @@ function loadSlot(n, url){
   const shell = document.getElementById('vs'+n);
   if(!shell) return;
   const embed = toEmbed(url);
-  if(!embed){alert('Could not parse that URL. Try a standard YouTube or Vimeo link.');return;}
+  if(!embed){alert('Could not parse that URL. Try a standard Google Drive, YouTube, or Vimeo link.');return;}
   const iframe = document.createElement('iframe');
   iframe.src = embed;
   iframe.allow = 'autoplay; fullscreen; picture-in-picture';
